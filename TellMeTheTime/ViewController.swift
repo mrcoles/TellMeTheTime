@@ -31,6 +31,7 @@ class ViewController: UIViewController {
             self.timeLabel.text = currentTime.text
             if currentTime.seconds % 10 == 0 {
                 print("CURRENT TIME! \(currentTime.text)") //REM
+                currentTime.sayIt()
             }
         })
     }
