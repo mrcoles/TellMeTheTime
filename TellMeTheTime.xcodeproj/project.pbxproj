@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D01695D220094AAC00247080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01695D120094AAC00247080 /* AppDelegate.swift */; };
+		D01695D420094AAC00247080 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01695D320094AAC00247080 /* ViewController.swift */; };
+		D01695D720094AAC00247080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01695D520094AAC00247080 /* Main.storyboard */; };
+		D01695DA20094AAC00247080 /* TellMeTheTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D01695D820094AAC00247080 /* TellMeTheTime.xcdatamodeld */; };
+		D01695DC20094AAC00247080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D01695DB20094AAC00247080 /* Assets.xcassets */; };
+		D01695DF20094AAC00247080 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01695DD20094AAC00247080 /* LaunchScreen.storyboard */; };
+		D01695EA20094AAD00247080 /* TellMeTheTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01695E920094AAD00247080 /* TellMeTheTimeTests.swift */; };
+		D01695F520094AAD00247080 /* TellMeTheTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01695F420094AAD00247080 /* TellMeTheTimeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D01695E620094AAD00247080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D01695C620094AAC00247080 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D01695CD20094AAC00247080;
+			remoteInfo = TellMeTheTime;
+		};
+		D01695F120094AAD00247080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D01695C620094AAC00247080 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D01695CD20094AAC00247080;
+			remoteInfo = TellMeTheTime;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D01695CE20094AAC00247080 /* TellMeTheTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TellMeTheTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D01695D120094AAC00247080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D01695D320094AAC00247080 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D01695D620094AAC00247080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D01695D920094AAC00247080 /* TellMeTheTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TellMeTheTime.xcdatamodel; sourceTree = "<group>"; };
+		D01695DB20094AAC00247080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D01695DE20094AAC00247080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D01695E020094AAD00247080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D01695E520094AAD00247080 /* TellMeTheTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TellMeTheTimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D01695E920094AAD00247080 /* TellMeTheTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellMeTheTimeTests.swift; sourceTree = "<group>"; };
+		D01695EB20094AAD00247080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D01695F020094AAD00247080 /* TellMeTheTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TellMeTheTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D01695F420094AAD00247080 /* TellMeTheTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellMeTheTimeUITests.swift; sourceTree = "<group>"; };
+		D01695F620094AAD00247080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D01695CB20094AAC00247080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D01695E220094AAD00247080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D01695ED20094AAD00247080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D01695C520094AAC00247080 = {
+			isa = PBXGroup;
+			children = (
+				D01695D020094AAC00247080 /* TellMeTheTime */,
+				D01695E820094AAD00247080 /* TellMeTheTimeTests */,
+				D01695F320094AAD00247080 /* TellMeTheTimeUITests */,
+				D01695CF20094AAC00247080 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D01695CF20094AAC00247080 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D01695CE20094AAC00247080 /* TellMeTheTime.app */,
+				D01695E520094AAD00247080 /* TellMeTheTimeTests.xctest */,
+				D01695F020094AAD00247080 /* TellMeTheTimeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D01695D020094AAC00247080 /* TellMeTheTime */ = {
+			isa = PBXGroup;
+			children = (
+				D01695D120094AAC00247080 /* AppDelegate.swift */,
+				D01695D320094AAC00247080 /* ViewController.swift */,
+				D01695D520094AAC00247080 /* Main.storyboard */,
+				D01695DB20094AAC00247080 /* Assets.xcassets */,
+				D01695DD20094AAC00247080 /* LaunchScreen.storyboard */,
+				D01695E020094AAD00247080 /* Info.plist */,
+				D01695D820094AAC00247080 /* TellMeTheTime.xcdatamodeld */,
+			);
+			path = TellMeTheTime;
+			sourceTree = "<group>";
+		};
+		D01695E820094AAD00247080 /* TellMeTheTimeTests */ = {
+			isa = PBXGroup;
+			children = (
+				D01695E920094AAD00247080 /* TellMeTheTimeTests.swift */,
+				D01695EB20094AAD00247080 /* Info.plist */,
+			);
+			path = TellMeTheTimeTests;
+			sourceTree = "<group>";
+		};
+		D01695F320094AAD00247080 /* TellMeTheTimeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D01695F420094AAD00247080 /* TellMeTheTimeUITests.swift */,
+				D01695F620094AAD00247080 /* Info.plist */,
+			);
+			path = TellMeTheTimeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D01695CD20094AAC00247080 /* TellMeTheTime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D01695F920094AAD00247080 /* Build configuration list for PBXNativeTarget "TellMeTheTime" */;
+			buildPhases = (
+				D01695CA20094AAC00247080 /* Sources */,
+				D01695CB20094AAC00247080 /* Frameworks */,
+				D01695CC20094AAC00247080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TellMeTheTime;
+			productName = TellMeTheTime;
+			productReference = D01695CE20094AAC00247080 /* TellMeTheTime.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D01695E420094AAD00247080 /* TellMeTheTimeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D01695FC20094AAD00247080 /* Build configuration list for PBXNativeTarget "TellMeTheTimeTests" */;
+			buildPhases = (
+				D01695E120094AAD00247080 /* Sources */,
+				D01695E220094AAD00247080 /* Frameworks */,
+				D01695E320094AAD00247080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D01695E720094AAD00247080 /* PBXTargetDependency */,
+			);
+			name = TellMeTheTimeTests;
+			productName = TellMeTheTimeTests;
+			productReference = D01695E520094AAD00247080 /* TellMeTheTimeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D01695EF20094AAD00247080 /* TellMeTheTimeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D01695FF20094AAD00247080 /* Build configuration list for PBXNativeTarget "TellMeTheTimeUITests" */;
+			buildPhases = (
+				D01695EC20094AAD00247080 /* Sources */,
+				D01695ED20094AAD00247080 /* Frameworks */,
+				D01695EE20094AAD00247080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D01695F220094AAD00247080 /* PBXTargetDependency */,
+			);
+			name = TellMeTheTimeUITests;
+			productName = TellMeTheTimeUITests;
+			productReference = D01695F020094AAD00247080 /* TellMeTheTimeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D01695C620094AAC00247080 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Peter Coles";
+				TargetAttributes = {
+					D01695CD20094AAC00247080 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					D01695E420094AAD00247080 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D01695CD20094AAC00247080;
+					};
+					D01695EF20094AAD00247080 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D01695CD20094AAC00247080;
+					};
+				};
+			};
+			buildConfigurationList = D01695C920094AAC00247080 /* Build configuration list for PBXProject "TellMeTheTime" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D01695C520094AAC00247080;
+			productRefGroup = D01695CF20094AAC00247080 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D01695CD20094AAC00247080 /* TellMeTheTime */,
+				D01695E420094AAD00247080 /* TellMeTheTimeTests */,
+				D01695EF20094AAD00247080 /* TellMeTheTimeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D01695CC20094AAC00247080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D01695DF20094AAC00247080 /* LaunchScreen.storyboard in Resources */,
+				D01695DC20094AAC00247080 /* Assets.xcassets in Resources */,
+				D01695D720094AAC00247080 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D01695E320094AAD00247080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D01695EE20094AAD00247080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D01695CA20094AAC00247080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D01695D420094AAC00247080 /* ViewController.swift in Sources */,
+				D01695DA20094AAC00247080 /* TellMeTheTime.xcdatamodeld in Sources */,
+				D01695D220094AAC00247080 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D01695E120094AAD00247080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D01695EA20094AAD00247080 /* TellMeTheTimeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D01695EC20094AAD00247080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D01695F520094AAD00247080 /* TellMeTheTimeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D01695E720094AAD00247080 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D01695CD20094AAC00247080 /* TellMeTheTime */;
+			targetProxy = D01695E620094AAD00247080 /* PBXContainerItemProxy */;
+		};
+		D01695F220094AAD00247080 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D01695CD20094AAC00247080 /* TellMeTheTime */;
+			targetProxy = D01695F120094AAD00247080 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D01695D520094AAC00247080 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D01695D620094AAC00247080 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D01695DD20094AAC00247080 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D01695DE20094AAC00247080 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D01695F720094AAD00247080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D01695F820094AAD00247080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D01695FA20094AAD00247080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W279UAU55M;
+				INFOPLIST_FILE = TellMeTheTime/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mrcoles.TellMeTheTime;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D01695FB20094AAD00247080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W279UAU55M;
+				INFOPLIST_FILE = TellMeTheTime/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mrcoles.TellMeTheTime;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D01695FD20094AAD00247080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W279UAU55M;
+				INFOPLIST_FILE = TellMeTheTimeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mrcoles.TellMeTheTimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TellMeTheTime.app/TellMeTheTime";
+			};
+			name = Debug;
+		};
+		D01695FE20094AAD00247080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W279UAU55M;
+				INFOPLIST_FILE = TellMeTheTimeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mrcoles.TellMeTheTimeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TellMeTheTime.app/TellMeTheTime";
+			};
+			name = Release;
+		};
+		D016960020094AAD00247080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W279UAU55M;
+				INFOPLIST_FILE = TellMeTheTimeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mrcoles.TellMeTheTimeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TellMeTheTime;
+			};
+			name = Debug;
+		};
+		D016960120094AAD00247080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W279UAU55M;
+				INFOPLIST_FILE = TellMeTheTimeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mrcoles.TellMeTheTimeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TellMeTheTime;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D01695C920094AAC00247080 /* Build configuration list for PBXProject "TellMeTheTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D01695F720094AAD00247080 /* Debug */,
+				D01695F820094AAD00247080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D01695F920094AAD00247080 /* Build configuration list for PBXNativeTarget "TellMeTheTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D01695FA20094AAD00247080 /* Debug */,
+				D01695FB20094AAD00247080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D01695FC20094AAD00247080 /* Build configuration list for PBXNativeTarget "TellMeTheTimeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D01695FD20094AAD00247080 /* Debug */,
+				D01695FE20094AAD00247080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D01695FF20094AAD00247080 /* Build configuration list for PBXNativeTarget "TellMeTheTimeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D016960020094AAD00247080 /* Debug */,
+				D016960120094AAD00247080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D01695D820094AAC00247080 /* TellMeTheTime.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D01695D920094AAC00247080 /* TellMeTheTime.xcdatamodel */,
+			);
+			currentVersion = D01695D920094AAC00247080 /* TellMeTheTime.xcdatamodel */;
+			path = TellMeTheTime.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D01695C620094AAC00247080 /* Project object */;
+}
