@@ -15,6 +15,7 @@
 		D01695DF20094AAC00247080 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01695DD20094AAC00247080 /* LaunchScreen.storyboard */; };
 		D01695EA20094AAD00247080 /* TellMeTheTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01695E920094AAD00247080 /* TellMeTheTimeTests.swift */; };
 		D01695F520094AAD00247080 /* TellMeTheTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01695F420094AAD00247080 /* TellMeTheTimeUITests.swift */; };
+		D016960320095F0100247080 /* TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D016960220095F0100247080 /* TimeFormat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D01695F020094AAD00247080 /* TellMeTheTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TellMeTheTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D01695F420094AAD00247080 /* TellMeTheTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellMeTheTimeUITests.swift; sourceTree = "<group>"; };
 		D01695F620094AAD00247080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D016960220095F0100247080 /* TimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				D01695DD20094AAC00247080 /* LaunchScreen.storyboard */,
 				D01695E020094AAD00247080 /* Info.plist */,
 				D01695D820094AAC00247080 /* TellMeTheTime.xcdatamodeld */,
+				D016960220095F0100247080 /* TimeFormat.swift */,
 			);
 			path = TellMeTheTime;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				D01695D420094AAC00247080 /* ViewController.swift in Sources */,
 				D01695DA20094AAC00247080 /* TellMeTheTime.xcdatamodeld in Sources */,
 				D01695D220094AAC00247080 /* AppDelegate.swift in Sources */,
+				D016960320095F0100247080 /* TimeFormat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
