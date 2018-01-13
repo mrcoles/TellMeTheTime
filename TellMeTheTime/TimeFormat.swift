@@ -35,10 +35,25 @@ class TimeFormat {
         }
     }
     
+    let session: AVAudioSession
+    
     //MARK: Constructors
     
     init(use24: Bool) {
         self.use24 = use24
+        
+        // TODO - should I put this in `fun application` start? https://developer.apple.com/library/content/documentation/AudioVideo/Conceptual/MediaPlaybackGuide/Contents/Resources/en.lproj/ConfiguringAudioSettings/ConfiguringAudioSettings.html#//apple_ref/doc/uid/TP40016757-CH9-SW1
+        
+        // Access the shared, singleton audio session instance
+        session = AVAudioSession.sharedInstance()
+        
+        do {
+            try session.setCategory(AVAudioSessionCategoryPlayback, with:
+                AVAudioSessionCategoryOptions.mixWithOthers)
+            // TODO - consider setting https://developer.apple.com/documentation/avfoundation/avaudiosessionmodespokenaudio for the session mode?
+        } catch {
+            fatalError("Unable to set audio session!")
+        }
     }
     
     convenience init() {
@@ -56,6 +71,8 @@ struct CurrentTime {
     var date: Date
     var text: String
     var sayableText: String
+    var hours: Int
+    var minutes: Int
     var seconds: Int
     
     init(_ date: Date, formatter: DateFormatter, sayableFormatter: DateFormatter) {
@@ -68,7 +85,12 @@ struct CurrentTime {
         self.date = date
         self.text = text
         self.sayableText = sayableText
-        self.seconds = Calendar.current.component(.second, from: date)
+        
+        let cal = Calendar.current
+        
+        self.hours = cal.component(.hour, from: date)
+        self.minutes = cal.component(.minute, from: date)
+        self.seconds = cal.component(.second, from: date)
     }
     
     func sayIt() {
