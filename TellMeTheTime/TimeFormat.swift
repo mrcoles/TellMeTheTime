@@ -12,12 +12,12 @@ import AVFoundation
 class TimeFormat {
     
     //MARK: Static Properties
-    static let FMT12 = TimeFormat.dateFormatter("hh:mm:ss a")
-    static let FMT24 = TimeFormat.dateFormatter("HH:mm:ss")
+    static let FMT12 = TimeFormat.dateFormatter("hh:mm:ss a") // 04:58:12 PM
+    static let FMT24 = TimeFormat.dateFormatter("HH:mm:ss") // 16:58:12
     
     // TODO(l10n) - this might be over-optimized for english...
-    static let FMT12_SAYABLE = TimeFormat.dateFormatter("h mm a")
-    static let FMT24_SAYABLE = TimeFormat.dateFormatter("H mm")
+    static let FMT12_SAYABLE = TimeFormat.dateFormatter("h mm a") // 4 58 PM
+    static let FMT24_SAYABLE = TimeFormat.dateFormatter("H mm") // 16 58
     
     static func dateFormatter(_ fromString: String) -> DateFormatter {
         let fmt = DateFormatter()
@@ -60,7 +60,10 @@ struct CurrentTime {
     
     init(_ date: Date, formatter: DateFormatter, sayableFormatter: DateFormatter) {
         let text = formatter.string(from: date)
-        let sayableText = sayableFormatter.string(from: date)
+        var sayableText = sayableFormatter.string(from: date)
+        
+        // HACK - make 05 sound like "oh five", maybe do this in a better way...
+        sayableText = sayableText.replacingOccurrences(of: " 0", with: " oh ")
         
         self.date = date
         self.text = text
@@ -69,11 +72,17 @@ struct CurrentTime {
     }
     
     func sayIt() {
-        let string = self.sayableText
-        let utterance = AVSpeechUtterance(string: string)
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
-        
-        let synth = AVSpeechSynthesizer()
-        synth.speak(utterance)
+        DispatchQueue.global(qos: .userInitiated).async {
+            let string = self.sayableText
+            let utterance = AVSpeechUtterance(string: string)
+            
+            // https://www.ikiapps.com/tips/2015/12/30/setting-voice-for-tts-in-ios
+            // Language: en-IE, Name: Moira
+            // REM utterance.voice = AVSpeechSynthesisVoice(identifier: "Moira")
+            utterance.voice = AVSpeechSynthesisVoice(language: Locale.preferredLanguages[0])
+            
+            let synth = AVSpeechSynthesizer()
+            synth.speak(utterance)
+        }
     }
 }
