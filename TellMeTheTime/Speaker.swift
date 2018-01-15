@@ -11,18 +11,21 @@ import AVFoundation
 
 
 class Speaker: NSObject, AVSpeechSynthesizerDelegate {
-    
     let synth: AVSpeechSynthesizer
-    var callback: (() -> Void)?
+    var speaking = false // used to no-op calls when already speaking
     
     override init() {
         synth = AVSpeechSynthesizer()
     }
 
-    func speak(text: String, callback: (() -> Void)?) {
+    func speak(text: String) {
+        if (speaking) {
+            return
+        }
+        speaking = true
+
         synth.delegate = self // TODO - can I put this in init?
-        self.callback = callback
-        
+
         DispatchQueue.global(qos: .userInitiated).async {
             let utterance = AVSpeechUtterance(string: text)
             
@@ -39,13 +42,7 @@ class Speaker: NSObject, AVSpeechSynthesizerDelegate {
     
     func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
         print("FINISHED SPEAKING!")
-        if let callback = callback {
-            DispatchQueue.main.async {
-                callback()
-            }
-        }
-
+        speaking = false
     }
-    
 }
 

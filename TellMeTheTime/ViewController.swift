@@ -39,7 +39,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, AVSpeechSyn
     var formatter = TimeFormat()
     var currentTime: CurrentTime?
     var muted = false
-    var speaking = false
     
     //MARK: Methods
 
@@ -99,30 +98,14 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, AVSpeechSyn
         playMuteButton.setTitle(muted ? "Active" : "Mute", for: .normal)
     }
     
-    //MARK: AVSpeechSynthesizerDelegate
-    //REM
-    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
-        print("DONE SPEAKING!")
-        self.finishedSpeaking()
-    }
-    
     //MARK: Private helpers
     
     func sayTime() {
-        if !speaking && !muted, let currentTime = currentTime {
+        if !muted, let currentTime = currentTime {
             print("SPEAKING TRUE!")
-            speaking = true
             
-            speaker.speak(text: currentTime.sayableText, callback: {
-                print("SPEAKING FALSE! DONE")
-                self.speaking = false
-            })
+            speaker.speak(text: currentTime.sayableText)
         }
-    }
-    
-    func finishedSpeaking() {
-        print("SPEAKING FALSE!")
-        self.speaking = false
     }
     
     func updateClockLabel() {
