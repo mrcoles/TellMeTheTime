@@ -13,15 +13,31 @@ import AVFoundation
 class Speaker: NSObject, AVSpeechSynthesizerDelegate {
     let synth: AVSpeechSynthesizer
     var speaking = false // used to no-op calls when already speaking
-    
     var voices: [AVSpeechSynthesisVoice]
+    var voice: AVSpeechSynthesisVoice
+    
+    var voiceRow: Int {
+        get {
+            return voices.index(of: voice) ?? 0
+        }
+    }
     
     override init() {
         synth = AVSpeechSynthesizer()
         
-        voices = AVSpeechSynthesisVoice.speechVoices().filter({ voice in
+        let voices = AVSpeechSynthesisVoice.speechVoices().filter({ voice in
             return voice.language.starts(with: Locale.current.languageCode ?? "en")
         })
+        
+        let currentLangCode = AVSpeechSynthesisVoice.currentLanguageCode()
+        
+        let tVoice = voices.first(where: { voice in
+            return voice.language == currentLangCode
+        })
+            
+        voice = tVoice ?? voices[0]
+        
+        self.voices = voices
         
         /*
         voices.map({ voice in
@@ -40,12 +56,7 @@ class Speaker: NSObject, AVSpeechSynthesizerDelegate {
 
         DispatchQueue.global(qos: .userInitiated).async {
             let utterance = AVSpeechUtterance(string: text)
-            
-            // https://www.ikiapps.com/tips/2015/12/30/setting-voice-for-tts-in-ios
-            // Language: en-IE, Name: Moira
-            // REM utterance.voice = AVSpeechSynthesisVoice(identifier: "Moira")
-            utterance.voice = AVSpeechSynthesisVoice(language: Locale.preferredLanguages[0])
-            
+            utterance.voice = self.voice
             self.synth.speak(utterance)
         }
     }

@@ -51,7 +51,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pUe-VA-Uo1">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pUe-VA-Uo1">
                                                 <rect key="frame" x="241" y="0.0" width="51" height="31"/>
                                                 <connections>
                                                     <action selector="tapTimeFormatSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="wKQ-j7-bTn"/>
@@ -76,6 +76,10 @@
                                     </label>
                                     <pickerView contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1sN-WT-kEd">
                                         <rect key="frame" x="0.0" y="345" width="343" height="216"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="j6b-nB-dMd"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="m2X-Uh-fEa"/>
+                                        </connections>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcI-ri-Jdk">
                                         <rect key="frame" x="0.0" y="577" width="343" height="30"/>

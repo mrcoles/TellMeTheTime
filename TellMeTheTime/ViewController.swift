@@ -21,7 +21,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, UIGestureRecognizerDelegate, AVSpeechSynthesizerDelegate {
+class ViewController: UIViewController, UIGestureRecognizerDelegate, AVSpeechSynthesizerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
     //MARK: Properties
     
@@ -60,9 +60,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, AVSpeechSyn
         })
         
         // Setup voicePicker
-        
+        voicePicker.selectRow(speaker.voiceRow, inComponent: 0, animated: false)
 
         // Update UI
+        timeFormatSwitch.isOn = formatter.use24
         updateClockLabel()
         updateTimeFormatLabels()
         
@@ -100,6 +101,26 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, AVSpeechSyn
         muted = !muted
         
         playMuteButton.setTitle(muted ? "Active" : "Mute", for: .normal)
+    }
+    
+    //MARK: UIPickerViewDataSource and UIPickerViewDelegate
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return speaker.voices.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let voice = speaker.voices[row]
+        return "\(voice.name) (\(voice.language))"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let voice = speaker.voices[row]
+        speaker.voice = voice
     }
     
     //MARK: Private helpers
