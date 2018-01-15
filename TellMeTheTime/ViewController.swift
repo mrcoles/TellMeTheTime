@@ -31,6 +31,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, AVSpeechSyn
     @IBOutlet weak var timeFormat24Label: UILabel!
     @IBOutlet weak var timeFormatSwitch: UISwitch!
     
+    @IBOutlet weak var voicePicker: UIPickerView!
     @IBOutlet weak var playMuteButton: UIButton!
     
     let speaker = Speaker()
@@ -46,8 +47,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, AVSpeechSyn
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // block: (Timer) -> Void
-        
+        // Setup timer for updating the clock
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { _ in
             let currentTime = self.formatter.currentTime()
             self.currentTime = currentTime
@@ -59,9 +59,14 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, AVSpeechSyn
             }
         })
         
+        // Setup voicePicker
+        
+
+        // Update UI
         updateClockLabel()
         updateTimeFormatLabels()
         
+        // Setup gesture recognizer for time label
         timeLabel.isUserInteractionEnabled = true
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapTimeLabel(_:)))
         timeLabel.addGestureRecognizer(tap)
@@ -77,7 +82,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, AVSpeechSyn
     
     @IBAction func tapTimeLabel(_ sender: UITapGestureRecognizer) {
         print("TAPPED?!?")
-        
         sayTime()
     }
     

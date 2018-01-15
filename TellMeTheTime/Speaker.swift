@@ -14,8 +14,20 @@ class Speaker: NSObject, AVSpeechSynthesizerDelegate {
     let synth: AVSpeechSynthesizer
     var speaking = false // used to no-op calls when already speaking
     
+    var voices: [AVSpeechSynthesisVoice]
+    
     override init() {
         synth = AVSpeechSynthesizer()
+        
+        voices = AVSpeechSynthesisVoice.speechVoices().filter({ voice in
+            return voice.language.starts(with: Locale.current.languageCode ?? "en")
+        })
+        
+        /*
+        voices.map({ voice in
+            return "\(voice.identifier) - \(voice.language) - \(voice.name)"
+        }).joined(separator: "\n")
+        */
     }
 
     func speak(text: String) {
