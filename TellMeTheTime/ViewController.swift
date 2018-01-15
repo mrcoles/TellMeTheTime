@@ -30,9 +30,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var timeFormat24Label: UILabel!
     @IBOutlet weak var timeFormatSwitch: UISwitch!
     
+    @IBOutlet weak var playMuteButton: UIButton!
+    
+    
     var timer = Timer()
     var formatter = TimeFormat()
     var currentTime: CurrentTime?
+    var muted = false
     
     //MARK: Methods
 
@@ -48,8 +52,10 @@ class ViewController: UIViewController {
 
             self.updateClockLabel()
             if currentTime.seconds == 0 {
-                print("CURRENT TIME! \(currentTime.text)")
-                currentTime.sayIt()
+                print("CURRENT TIME! \(currentTime.text) (muted? \(self.muted)")
+                if !self.muted {
+                    currentTime.sayIt()
+                }
             }
         })
         
@@ -75,7 +81,12 @@ class ViewController: UIViewController {
         updateClockLabel()
     }
     
-
+    @IBAction func tapPlayMuteButton(_ sender: UIButton) {
+        muted = !muted
+        
+        playMuteButton.setTitle(muted ? "Play" : "Mute", for: .normal)
+    }
+    
     //MARK: Private helpers
     
     func updateClockLabel() {

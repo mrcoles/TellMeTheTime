@@ -23,17 +23,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="mWY-xK-itL">
-                                <rect key="frame" x="16" y="40" width="343" height="547"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="mWY-xK-itL">
+                                <rect key="frame" x="16" y="40" width="343" height="607"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nB0-Wi-Zna">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="57.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="00:00:00 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nB0-Wi-Zna">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="245.5"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="48"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UvE-pe-Aph">
-                                        <rect key="frame" x="0.0" y="105.5" width="343" height="31"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UvE-pe-Aph">
+                                        <rect key="frame" x="0.0" y="261.5" width="343" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Time format" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMY-Qh-WmC">
                                                 <rect key="frame" x="0.0" y="0.0" width="180" height="31"/>
@@ -68,23 +68,27 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2y-dh-z6B">
-                                        <rect key="frame" x="0.0" y="184.5" width="343" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="308.5" width="343" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1sN-WT-kEd">
-                                        <rect key="frame" x="0.0" y="253" width="343" height="216"/>
+                                    <pickerView contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1sN-WT-kEd">
+                                        <rect key="frame" x="0.0" y="345" width="343" height="216"/>
                                     </pickerView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcI-ri-Jdk">
-                                        <rect key="frame" x="0.0" y="517" width="343" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcI-ri-Jdk">
+                                        <rect key="frame" x="0.0" y="577" width="343" height="30"/>
                                         <state key="normal" title="Mute"/>
+                                        <connections>
+                                            <action selector="tapPlayMuteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V8a-Pw-qAh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mWY-xK-itL" secondAttribute="bottom" constant="20" id="MKE-bw-1TL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mWY-xK-itL" secondAttribute="trailing" constant="16" id="Oy4-tD-Os8"/>
                             <constraint firstItem="mWY-xK-itL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="rVn-N6-rOt"/>
                             <constraint firstItem="mWY-xK-itL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="xOd-Sj-lfy"/>
@@ -92,6 +96,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="playMuteButton" destination="vcI-ri-Jdk" id="Ro6-e8-w6p"/>
                         <outlet property="timeFormat12Label" destination="CEL-Zn-85S" id="cbz-qK-T9T"/>
                         <outlet property="timeFormat24Label" destination="ufg-WE-2DV" id="jhr-sn-hfd"/>
                         <outlet property="timeFormatSwitch" destination="pUe-VA-Uo1" id="t7R-Mw-JfT"/>
