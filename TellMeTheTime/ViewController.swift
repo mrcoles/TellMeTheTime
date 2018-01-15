@@ -25,10 +25,14 @@ class ViewController: UIViewController {
     //MARK: Properties
     
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var startButton: UIButton!
+    
+    @IBOutlet weak var timeFormat12Label: UILabel!
+    @IBOutlet weak var timeFormat24Label: UILabel!
+    @IBOutlet weak var timeFormatSwitch: UISwitch!
     
     var timer = Timer()
     var formatter = TimeFormat()
+    var currentTime: CurrentTime?
     
     //MARK: Methods
 
@@ -40,12 +44,17 @@ class ViewController: UIViewController {
         
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { _ in
             let currentTime = self.formatter.currentTime()
-            self.timeLabel.text = currentTime.text
-            if currentTime.seconds % 5 == 0 {
+            self.currentTime = currentTime
+
+            self.updateClockLabel()
+            if currentTime.seconds == 0 {
                 print("CURRENT TIME! \(currentTime.text)")
                 currentTime.sayIt()
             }
         })
+        
+        updateClockLabel()
+        updateTimeFormatLabels()
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,11 +64,37 @@ class ViewController: UIViewController {
     
     //MARK: Actions
     
-    @IBAction func tapStart(_ sender: UIButton) {
-        formatter.use24 = !formatter.use24
+    @IBAction func tapTimeFormatSwitch(_ sender: UISwitch) {
+        let use24 = sender.isOn
+        
+        formatter.use24 = use24
+        updateTimeFormatLabels()
+        
+        // redraw clock immediately
+        currentTime = formatter.currentTime()
+        updateClockLabel()
     }
     
 
     //MARK: Private helpers
+    
+    func updateClockLabel() {
+        if let currentTime = currentTime {
+            timeLabel.text = currentTime.text
+        }
+    }
+    
+    func updateTimeFormatLabels() {
+        let use24 = formatter.use24
+        toggleBold(label: timeFormat24Label, setBold: use24)
+        toggleBold(label: timeFormat12Label, setBold: !use24)
+    }
+    
+    func toggleBold(label: UILabel, setBold: Bool) {
+        if let font = label.font {
+            let size = font.pointSize
+            label.font = setBold ? UIFont.boldSystemFont(ofSize: size) : UIFont.systemFont(ofSize: size)
+        }
+    }
 }
 
