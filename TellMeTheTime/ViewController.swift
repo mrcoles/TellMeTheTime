@@ -19,8 +19,9 @@
 //
 
 import UIKit
+import AVFoundation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIGestureRecognizerDelegate, AVSpeechSynthesizerDelegate {
     
     //MARK: Properties
     
@@ -32,11 +33,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var playMuteButton: UIButton!
     
+    let speaker = Speaker()
     
     var timer = Timer()
     var formatter = TimeFormat()
     var currentTime: CurrentTime?
     var muted = false
+    var speaking = false
     
     //MARK: Methods
 
@@ -52,15 +55,18 @@ class ViewController: UIViewController {
 
             self.updateClockLabel()
             if currentTime.seconds == 0 {
-                print("CURRENT TIME! \(currentTime.text) (muted? \(self.muted)")
-                if !self.muted {
-                    currentTime.sayIt()
-                }
+                print("CURRENT TIME! \(currentTime.text) (muted? \(self.muted))")
+                self.sayTime()
             }
         })
         
         updateClockLabel()
         updateTimeFormatLabels()
+        
+        timeLabel.isUserInteractionEnabled = true
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapTimeLabel(_:)))
+        timeLabel.addGestureRecognizer(tap)
+        tap.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,6 +75,12 @@ class ViewController: UIViewController {
     }
     
     //MARK: Actions
+    
+    @IBAction func tapTimeLabel(_ sender: UITapGestureRecognizer) {
+        print("TAPPED?!?")
+        
+        sayTime()
+    }
     
     @IBAction func tapTimeFormatSwitch(_ sender: UISwitch) {
         let use24 = sender.isOn
@@ -84,10 +96,34 @@ class ViewController: UIViewController {
     @IBAction func tapPlayMuteButton(_ sender: UIButton) {
         muted = !muted
         
-        playMuteButton.setTitle(muted ? "Play" : "Mute", for: .normal)
+        playMuteButton.setTitle(muted ? "Active" : "Mute", for: .normal)
+    }
+    
+    //MARK: AVSpeechSynthesizerDelegate
+    //REM
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        print("DONE SPEAKING!")
+        self.finishedSpeaking()
     }
     
     //MARK: Private helpers
+    
+    func sayTime() {
+        if !speaking && !muted, let currentTime = currentTime {
+            print("SPEAKING TRUE!")
+            speaking = true
+            
+            speaker.speak(text: currentTime.sayableText, callback: {
+                print("SPEAKING FALSE! DONE")
+                self.speaking = false
+            })
+        }
+    }
+    
+    func finishedSpeaking() {
+        print("SPEAKING FALSE!")
+        self.speaking = false
+    }
     
     func updateClockLabel() {
         if let currentTime = currentTime {

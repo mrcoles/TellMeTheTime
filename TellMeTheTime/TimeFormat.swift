@@ -92,19 +92,4 @@ struct CurrentTime {
         self.minutes = cal.component(.minute, from: date)
         self.seconds = cal.component(.second, from: date)
     }
-    
-    func sayIt() {
-        DispatchQueue.global(qos: .userInitiated).async {
-            let string = self.sayableText
-            let utterance = AVSpeechUtterance(string: string)
-            
-            // https://www.ikiapps.com/tips/2015/12/30/setting-voice-for-tts-in-ios
-            // Language: en-IE, Name: Moira
-            // REM utterance.voice = AVSpeechSynthesisVoice(identifier: "Moira")
-            utterance.voice = AVSpeechSynthesisVoice(language: Locale.preferredLanguages[0])
-            
-            let synth = AVSpeechSynthesizer()
-            synth.speak(utterance)
-        }
-    }
 }
