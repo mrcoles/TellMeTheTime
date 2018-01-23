@@ -48,6 +48,7 @@ class TimeFormat {
         session = AVAudioSession.sharedInstance()
         
         do {
+            // TODO - move this to somewhere else? AppDelegate?
             try session.setCategory(AVAudioSessionCategoryPlayback, with:
                 AVAudioSessionCategoryOptions.mixWithOthers)
             // TODO - consider setting https://developer.apple.com/documentation/avfoundation/avaudiosessionmodespokenaudio for the session mode?

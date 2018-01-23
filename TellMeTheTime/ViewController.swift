@@ -8,10 +8,10 @@
 
 // TODO
 //
-// *   get lock screen controls working? MPRemoteCommandCenter
 // *   logo and other launch stuff
-// *   something prettier on the main screen & some indication of nearing the minute
 // *   extra voices: recording, conceptual sound
+// *   PUNT: something prettier on the main screen & some indication of nearing the minute
+// *   PUNT get lock screen controls working? MPRemoteCommandCenter
 // *   X three buttons on bottom: mute (or play/stop?) | voice select | 12hr vs 24hr
 // *   X auto list of system voices
 // *   X deal with main thread lag of talking
