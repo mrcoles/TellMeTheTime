@@ -99,7 +99,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIPickerVie
     
     //MARK: Actions
     
-    @IBAction func tapTimeLabel(_ sender: UITapGestureRecognizer) {
+    @objc func tapTimeLabel(_ sender: UITapGestureRecognizer) {
         sayTime()
     }
     
