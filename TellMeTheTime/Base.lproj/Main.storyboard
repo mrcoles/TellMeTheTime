@@ -138,6 +138,9 @@
                                                         </label>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FLd-gB-pbX">
                                                             <rect key="frame" x="241" y="0.0" width="51" height="31"/>
+                                                            <connections>
+                                                                <action selector="tapTimeFormatSwitch:" destination="3Il-Yd-3ku" eventType="valueChanged" id="H1v-Yq-09N"/>
+                                                            </connections>
                                                         </switch>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="24 hr" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3S8-QS-AlW">
                                                             <rect key="frame" x="298" y="0.0" width="45" height="31"/>
@@ -168,7 +171,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pAc-cz-y08">
                                                     <rect key="frame" x="0.0" y="6" width="343" height="31"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Mute playback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaO-yo-nxR">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Mute playback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaO-yo-nxR" userLabel="Volume Label">
                                                             <rect key="frame" x="0.0" y="0.0" width="180" height="31"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -185,8 +188,11 @@
                                                         </label>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="H6h-oA-nN7">
                                                             <rect key="frame" x="241" y="0.0" width="51" height="31"/>
+                                                            <connections>
+                                                                <action selector="tapVolumeSwitch:" destination="3Il-Yd-3ku" eventType="valueChanged" id="mMe-Bi-Le4"/>
+                                                            </connections>
                                                         </switch>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="🔇" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssz-1g-eRT">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="🔇" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssz-1g-eRT" userLabel="Volume Off Label">
                                                             <rect key="frame" x="298" y="0.0" width="45" height="31"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="EUR-vW-NS5"/>
@@ -228,13 +234,13 @@
                         <outlet property="voiceLabelWrapper" destination="ZD3-PQ-kcj" id="1cL-qw-fFp"/>
                         <outlet property="voicePicker" destination="31S-vi-6r2" id="VQh-lI-Pgq"/>
                         <outlet property="volumeOffLabel" destination="KaO-yo-nxR" id="YOQ-aY-woH"/>
-                        <outlet property="volumeOnLabel" destination="7MU-Df-aR0" id="F1G-tN-gV7"/>
-                        <outlet property="volumeSwitch" destination="H6h-oA-nN7" id="r8F-cw-oHI"/>
+                        <outlet property="volumeOnLabel" destination="7MU-Df-aR0" id="7NH-Ex-amn"/>
+                        <outlet property="volumeSwitch" destination="H6h-oA-nN7" id="bO0-sv-Zvo"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0RO-1a-we8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1665" y="36"/>
+            <point key="canvasLocation" x="1438" y="24"/>
         </scene>
     </scenes>
 </document>
