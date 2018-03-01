@@ -64,7 +64,10 @@ class TimeFormat {
     //MARK: Methods
     
     func currentTime() -> CurrentTime {
-        return CurrentTime(Date(), formatter: formatter, sayableFormatter: sayableFormatter)
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "HH:mm:ss"
+//        let date = formatter.date(from: "03:00:00")!
+        return CurrentTime(Date(), formatter: formatter, sayableFormatter: sayableFormatter, use24: use24)
     }
 }
 
@@ -76,10 +79,15 @@ struct CurrentTime {
     var minutes: Int
     var seconds: Int
     
-    init(_ date: Date, formatter: DateFormatter, sayableFormatter: DateFormatter) {
+    init(_ date: Date, formatter: DateFormatter, sayableFormatter: DateFormatter, use24: Bool) {
         let text = formatter.string(from: date)
         var sayableText = sayableFormatter.string(from: date)
         
+        // HACK - change "00"...
+        // if 12 hr time - remove it
+        // if 24 hr time - say hundred? TODO(l10n)
+        let ohohReplace = use24 ? " hundred" : ""
+        sayableText = sayableText.replacingOccurrences(of: " 00", with: ohohReplace)
         // HACK - make 05 sound like "oh five", maybe do this in a better way...
         sayableText = sayableText.replacingOccurrences(of: " 0", with: " oh ")
         
