@@ -17,6 +17,7 @@
 		D01695F520094AAD00247080 /* TellMeTheTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01695F420094AAD00247080 /* TellMeTheTimeUITests.swift */; };
 		D016960320095F0100247080 /* TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D016960220095F0100247080 /* TimeFormat.swift */; };
 		D0538166200D5E5400209959 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0538165200D5E5400209959 /* Speaker.swift */; };
+		D0CEC24C2048A6CE008547C7 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CEC24B2048A6CE008547C7 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		D01695F620094AAD00247080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D016960220095F0100247080 /* TimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormat.swift; sourceTree = "<group>"; };
 		D0538165200D5E5400209959 /* Speaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
+		D0CEC24B2048A6CE008547C7 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				D01695D120094AAC00247080 /* AppDelegate.swift */,
 				D01695D320094AAC00247080 /* ViewController.swift */,
+				D0CEC24B2048A6CE008547C7 /* TableViewController.swift */,
 				D01695D520094AAC00247080 /* Main.storyboard */,
 				D01695DB20094AAC00247080 /* Assets.xcassets */,
 				D01695DD20094AAC00247080 /* LaunchScreen.storyboard */,
@@ -274,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D01695D420094AAC00247080 /* ViewController.swift in Sources */,
+				D0CEC24C2048A6CE008547C7 /* TableViewController.swift in Sources */,
 				D01695DA20094AAC00247080 /* TellMeTheTime.xcdatamodeld in Sources */,
 				D0538166200D5E5400209959 /* Speaker.swift in Sources */,
 				D01695D220094AAC00247080 /* AppDelegate.swift in Sources */,

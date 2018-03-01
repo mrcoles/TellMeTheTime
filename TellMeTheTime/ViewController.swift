@@ -20,22 +20,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIGestureRecognizerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     //MARK: Properties
     
     @IBOutlet weak var timeLabel: UILabel!
     
-    @IBOutlet weak var timeFormat12Label: UILabel!
-    @IBOutlet weak var timeFormat24Label: UILabel!
-    @IBOutlet weak var timeFormatSwitch: UISwitch!
-    
-    
-    @IBOutlet weak var volumeOnLabel: UILabel!
-    @IBOutlet weak var volumeOffLabel: UILabel!
-    @IBOutlet weak var volumeSwitch: UISwitch!
-    
-    @IBOutlet weak var voicePicker: UIPickerView!
+    @IBOutlet weak var tableViewController: TableViewController!
     
     let speaker = Speaker()
     
@@ -62,22 +53,15 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIPickerVie
                 self.sayTime()
             }
         })
-        
-        // Setup voicePicker
-        voicePicker.selectRow(speaker.voiceRow, inComponent: 0, animated: false)
 
         // Update UI
-        timeFormatSwitch.isOn = formatter.use24
-        volumeSwitch.isOn = muted
         updateClockLabel()
-        updateTimeFormatLabels()
-        updateVolumeLabels()
         
         // Setup gesture recognizer for time label
         timeLabel.isUserInteractionEnabled = true
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapTimeLabel(_:)))
-        timeLabel.addGestureRecognizer(tap)
-        tap.delegate = self
+        let timeTap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapTimeLabel(_:)))
+        timeLabel.addGestureRecognizer(timeTap)
+        timeTap.delegate = self
         
         // Setup rotate listener
         NotificationCenter.default.addObserver(
@@ -102,42 +86,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIPickerVie
     @objc func tapTimeLabel(_ sender: UITapGestureRecognizer) {
         sayTime()
     }
-    
-    @IBAction func tapTimeFormatSwitch(_ sender: UISwitch) {
-        let use24 = sender.isOn
-        
-        formatter.use24 = use24
-        updateTimeFormatLabels()
-        
-        // redraw clock immediately
-        currentTime = formatter.currentTime()
-        updateClockLabel()
-    }
-    
-    @IBAction func tapVolumeSwitch(_ sender: UISwitch) {
-        muted = sender.isOn
-        updateVolumeLabels()
-    }
-    
-    //MARK: UIPickerViewDataSource and UIPickerViewDelegate
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return speaker.voices.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let voice = speaker.voices[row]
-        return "\(voice.name) (\(voice.language))"
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let voice = speaker.voices[row]
-        speaker.voice = voice
-    }
+
     
     //MARK: Private helpers
     
@@ -150,25 +99,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, UIPickerVie
     func updateClockLabel() {
         if let currentTime = currentTime {
             timeLabel.text = currentTime.text
-        }
-    }
-    
-    func updateTimeFormatLabels() {
-        let use24 = formatter.use24
-        toggleBold(label: timeFormat24Label, setBold: use24)
-        toggleBold(label: timeFormat12Label, setBold: !use24)
-    }
-    
-    func updateVolumeLabels() {
-        volumeOnLabel.alpha = muted ? 0.25 : 1.0
-        volumeOffLabel.alpha = muted ? 1.0 : 0.25
-        timeLabel.alpha = muted ? 0.5 : 1.0
-    }
-    
-    func toggleBold(label: UILabel, setBold: Bool) {
-        if let font = label.font {
-            let size = font.pointSize
-            label.font = setBold ? UIFont.boldSystemFont(ofSize: size) : UIFont.systemFont(ofSize: size)
         }
     }
     
