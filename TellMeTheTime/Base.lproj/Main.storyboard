@@ -67,6 +67,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="343" height="426"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                         <sections>
                             <tableViewSection id="qCD-tI-Lad">
                                 <cells>

@@ -72,7 +72,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, ChildToPare
                 self.setupBackground()
             }
         )
-        
         setupBackground()
     }
 

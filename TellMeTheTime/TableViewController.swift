@@ -43,6 +43,9 @@ class TableViewController: UITableViewController, UIGestureRecognizerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // fix weird extra left inset...
+        tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        
         let parent = self.delegate!
         
         // Setup voicePicker
