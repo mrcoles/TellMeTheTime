@@ -27,6 +27,7 @@ class TableViewController: UITableViewController, UIGestureRecognizerDelegate, U
     @IBOutlet weak var voiceLabelWrapper: UIStackView!
     
     @IBOutlet weak var voicePickerCell: UITableViewCell!
+    @IBOutlet weak var voicePicker: UIPickerView!
     
     @IBOutlet weak var timeFormat12Label: UILabel!
     @IBOutlet weak var timeFormat24Label: UILabel!
@@ -35,8 +36,6 @@ class TableViewController: UITableViewController, UIGestureRecognizerDelegate, U
     @IBOutlet weak var volumeOnLabel: UILabel!
     @IBOutlet weak var volumeOffLabel: UILabel!
     @IBOutlet weak var volumeSwitch: UISwitch!
-    
-    @IBOutlet weak var voicePicker: UIPickerView!
 
     var isVoicesExpanded = false
     
@@ -51,6 +50,7 @@ class TableViewController: UITableViewController, UIGestureRecognizerDelegate, U
         let parent = self.delegate!
         
         // Setup voicePicker
+        voicePicker.delegate = self
         voicePicker.selectRow(parent.speaker.voiceRow, inComponent: 0, animated: false)
         
         // Update UI
@@ -117,7 +117,7 @@ class TableViewController: UITableViewController, UIGestureRecognizerDelegate, U
         updateVolumeLabels()
     }
     
-    //MARK: UIPickerViewDataSource and UIPickerViewDelegate
+    // MARK: - UIPickerViewDataSource and UIPickerViewDelegate
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

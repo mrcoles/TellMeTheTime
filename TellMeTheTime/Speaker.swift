@@ -11,6 +11,9 @@ import AVFoundation
 
 
 class Speaker: NSObject, AVSpeechSynthesizerDelegate {
+    static let LANGUAGE_CODE_EN = "en"
+    static let LANGUAGE_CODE = Locale.current.languageCode ?? LANGUAGE_CODE_EN
+    
     let synth: AVSpeechSynthesizer
     var speaking = false // used to no-op calls when already speaking
     var voices: [AVSpeechSynthesisVoice]
@@ -26,7 +29,7 @@ class Speaker: NSObject, AVSpeechSynthesizerDelegate {
         synth = AVSpeechSynthesizer()
         
         let voices = AVSpeechSynthesisVoice.speechVoices().filter({ voice in
-            return voice.language.starts(with: Locale.current.languageCode ?? "en")
+            return voice.language.starts(with: Speaker.LANGUAGE_CODE)
         })
         
         let currentLangCode = AVSpeechSynthesisVoice.currentLanguageCode()
@@ -34,7 +37,7 @@ class Speaker: NSObject, AVSpeechSynthesizerDelegate {
         let tVoice = voices.first(where: { voice in
             return voice.language == currentLangCode
         })
-            
+        
         voice = tVoice ?? voices[0]
         
         self.voices = voices

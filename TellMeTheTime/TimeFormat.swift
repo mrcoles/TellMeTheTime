@@ -83,13 +83,15 @@ struct CurrentTime {
         let text = formatter.string(from: date)
         var sayableText = sayableFormatter.string(from: date)
         
-        // HACK - change "00"...
-        // if 12 hr time - remove it
-        // if 24 hr time - say hundred? TODO(l10n)
-        let ohohReplace = use24 ? " hundred" : ""
-        sayableText = sayableText.replacingOccurrences(of: " 00", with: ohohReplace)
-        // HACK - make 05 sound like "oh five", maybe do this in a better way...
-        sayableText = sayableText.replacingOccurrences(of: " 0", with: " oh ")
+        if (Speaker.LANGUAGE_CODE == Speaker.LANGUAGE_CODE_EN) {
+            // HACK - change "00"...
+            // if 12 hr time - remove it
+            // if 24 hr time - say hundred? TODO(l10n)
+            let ohohReplace = use24 ? " hundred" : ""
+            sayableText = sayableText.replacingOccurrences(of: " 00", with: ohohReplace)
+            // HACK - make 05 sound like "oh five", maybe do this in a better way...
+            sayableText = sayableText.replacingOccurrences(of: " 0", with: " oh ")
+        }
         
         self.date = date
         self.text = text
