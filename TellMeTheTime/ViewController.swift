@@ -20,8 +20,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIGestureRecognizerDelegate {
-    
+class ViewController: UIViewController, UIGestureRecognizerDelegate, ChildToParentProtocol {
+
     //MARK: Properties
     
     @IBOutlet weak var timeLabel: UILabel!
@@ -79,6 +79,14 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // https://stackoverflow.com/a/47447442/376489
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? TableViewController,
+            segue.identifier == "viewControllerToTable" {
+            vc.delegate = self
+        }
     }
     
     //MARK: Actions

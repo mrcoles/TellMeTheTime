@@ -33,7 +33,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N6A-Ey-PDb">
                                 <rect key="frame" x="16" y="221" width="343" height="426"/>
                                 <connections>
-                                    <segue destination="3Il-Yd-3ku" kind="embed" id="ncH-vj-8rV"/>
+                                    <segue destination="3Il-Yd-3ku" kind="embed" identifier="viewControllerToTable" id="ncH-vj-8rV"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -169,16 +169,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="pAc-cz-y08">
-                                                    <rect key="frame" x="0.0" y="6" width="343" height="31"/>
+                                                    <rect key="frame" x="0.0" y="6.5" width="343" height="31"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Mute playback" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaO-yo-nxR" userLabel="Volume Label">
-                                                            <rect key="frame" x="0.0" y="0.0" width="180" height="31"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="202" height="31"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="🔈" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MU-Df-aR0">
-                                                            <rect key="frame" x="188" y="0.0" width="45" height="31"/>
+                                                            <rect key="frame" x="210" y="0.0" width="45" height="31"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="v6Y-2g-qNx"/>
                                                             </constraints>
@@ -186,17 +186,14 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="H6h-oA-nN7">
-                                                            <rect key="frame" x="241" y="0.0" width="51" height="31"/>
+                                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fHW-ep-Z4u" userLabel="Volume Switch">
+                                                            <rect key="frame" x="263" y="0.0" width="51" height="31"/>
                                                             <connections>
-                                                                <action selector="tapVolumeSwitch:" destination="3Il-Yd-3ku" eventType="valueChanged" id="mMe-Bi-Le4"/>
+                                                                <action selector="tapVolumeSwitch:" destination="3Il-Yd-3ku" eventType="touchUpInside" id="dcv-qg-YLa"/>
                                                             </connections>
                                                         </switch>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="🔇" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ssz-1g-eRT" userLabel="Volume Off Label">
-                                                            <rect key="frame" x="298" y="0.0" width="45" height="31"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="EUR-vW-NS5"/>
-                                                            </constraints>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🔇" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4U7-vs-xSe" userLabel="Volume Off Label">
+                                                            <rect key="frame" x="320" y="0.0" width="23" height="31"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -233,14 +230,14 @@
                         <outlet property="timeFormatSwitch" destination="FLd-gB-pbX" id="N7t-HY-4Du"/>
                         <outlet property="voiceLabelWrapper" destination="ZD3-PQ-kcj" id="1cL-qw-fFp"/>
                         <outlet property="voicePicker" destination="31S-vi-6r2" id="VQh-lI-Pgq"/>
-                        <outlet property="volumeOffLabel" destination="KaO-yo-nxR" id="YOQ-aY-woH"/>
+                        <outlet property="volumeOffLabel" destination="4U7-vs-xSe" id="Ahd-ST-4M6"/>
                         <outlet property="volumeOnLabel" destination="7MU-Df-aR0" id="7NH-Ex-amn"/>
-                        <outlet property="volumeSwitch" destination="H6h-oA-nN7" id="bO0-sv-Zvo"/>
+                        <outlet property="volumeSwitch" destination="fHW-ep-Z4u" id="iWR-Ef-XPu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0RO-1a-we8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1438" y="24"/>
+            <point key="canvasLocation" x="1609" y="24"/>
         </scene>
     </scenes>
 </document>

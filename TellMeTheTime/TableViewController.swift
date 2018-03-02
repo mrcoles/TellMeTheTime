@@ -8,9 +8,21 @@
 
 import UIKit
 
+protocol ChildToParentProtocol:class {
+    var speaker: Speaker { get }
+    var formatter: TimeFormat { get }
+    var muted: Bool { get set }
+    var currentTime: CurrentTime? { get set }
+    var timeLabel: UILabel! { get }
+    
+    func updateClockLabel()
+}
+
 class TableViewController: UITableViewController, UIGestureRecognizerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
     // MARK: Properties
+    
+    weak var delegate:ChildToParentProtocol? = nil
     
     @IBOutlet weak var voiceLabelWrapper: UIStackView!
     
@@ -18,14 +30,11 @@ class TableViewController: UITableViewController, UIGestureRecognizerDelegate, U
     @IBOutlet weak var timeFormat24Label: UILabel!
     @IBOutlet weak var timeFormatSwitch: UISwitch!
     
-    
     @IBOutlet weak var volumeOnLabel: UILabel!
     @IBOutlet weak var volumeOffLabel: UILabel!
     @IBOutlet weak var volumeSwitch: UISwitch!
     
     @IBOutlet weak var voicePicker: UIPickerView!
-
-    var parentSelf: ViewController?
 
     var isVoicesExpanded = false
     
@@ -34,15 +43,14 @@ class TableViewController: UITableViewController, UIGestureRecognizerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let pSelf = self.parent as! ViewController;
-        self.parentSelf = pSelf
+        let parent = self.delegate!
         
         // Setup voicePicker
-        voicePicker.selectRow(pSelf.speaker.voiceRow, inComponent: 0, animated: false)
+        voicePicker.selectRow(parent.speaker.voiceRow, inComponent: 0, animated: false)
         
         // Update UI
-        timeFormatSwitch.isOn = pSelf.formatter.use24
-        volumeSwitch.isOn = pSelf.muted
+        timeFormatSwitch.isOn = parent.formatter.use24
+        volumeSwitch.isOn = parent.muted
         updateTimeFormatLabels()
         updateVolumeLabels()
         
@@ -79,27 +87,20 @@ class TableViewController: UITableViewController, UIGestureRecognizerDelegate, U
     
     @IBAction func tapTimeFormatSwitch(_ sender: UISwitch) {
         let use24 = sender.isOn
+        let parent = delegate!
         
-        guard let pSelf = parentSelf else {
-            print("No parentSelf!")
-            return
-        }
-        
-        pSelf.formatter.use24 = use24
+        parent.formatter.use24 = use24
         updateTimeFormatLabels()
         
         // redraw clock immediately
-        pSelf.currentTime = pSelf.formatter.currentTime()
-        pSelf.updateClockLabel()
+        parent.currentTime = parent.formatter.currentTime()
+        parent.updateClockLabel()
     }
     
     @IBAction func tapVolumeSwitch(_ sender: UISwitch) {
-        guard let pSelf = parentSelf else {
-            print("No parentSelf!")
-            return
-        }
+        let parent = delegate!
         
-        pSelf.muted = sender.isOn
+        parent.muted = sender.isOn
         updateVolumeLabels()
     }
     
@@ -110,57 +111,42 @@ class TableViewController: UITableViewController, UIGestureRecognizerDelegate, U
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        guard let pSelf = parentSelf else {
-            print("No parentSelf!")
-            return 0
-        }
+        let parent = delegate!
         
-        return pSelf.speaker.voices.count
+        return parent.speaker.voices.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        guard let pSelf = parentSelf else {
-            print("No parentSelf!")
-            return ""
-        }
+        let parent = delegate!
         
-        let voice = pSelf.speaker.voices[row]
+        let voice = parent.speaker.voices[row]
         return "\(voice.name) (\(voice.language))"
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        guard let pSelf = parentSelf else {
-            print("No parentSelf!")
-            return
-        }
+        let parent = delegate!
         
-        let voice = pSelf.speaker.voices[row]
-        pSelf.speaker.voice = voice
+        let voice = parent.speaker.voices[row]
+        parent.speaker.voice = voice
     }
     
     // MARK: Private helpers
     
     func updateTimeFormatLabels() {
-        guard let pSelf = parentSelf else {
-            print("No parentSelf!")
-            return
-        }
+        let parent = delegate!
         
-        let use24 = pSelf.formatter.use24
+        let use24 = parent.formatter.use24
         toggleBold(label: timeFormat24Label, setBold: use24)
         toggleBold(label: timeFormat12Label, setBold: !use24)
     }
     
     func updateVolumeLabels() {
-        guard let pSelf = parentSelf else {
-            print("No parentSelf!")
-            return
-        }
+        let parent = delegate!
         
-        let muted = pSelf.muted
+        let muted = parent.muted
         volumeOnLabel.alpha = muted ? 0.25 : 1.0
         volumeOffLabel.alpha = muted ? 1.0 : 0.25
-        pSelf.timeLabel.alpha = muted ? 0.5 : 1.0
+        parent.timeLabel.alpha = muted ? 0.5 : 1.0
     }
     
     func toggleBold(label: UILabel, setBold: Bool) {
