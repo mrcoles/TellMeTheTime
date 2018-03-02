@@ -26,6 +26,8 @@ class TableViewController: UITableViewController, UIGestureRecognizerDelegate, U
     
     @IBOutlet weak var voiceLabelWrapper: UIStackView!
     
+    @IBOutlet weak var voicePickerCell: UITableViewCell!
+    
     @IBOutlet weak var timeFormat12Label: UILabel!
     @IBOutlet weak var timeFormat24Label: UILabel!
     @IBOutlet weak var timeFormatSwitch: UISwitch!
@@ -78,14 +80,22 @@ class TableViewController: UITableViewController, UIGestureRecognizerDelegate, U
     // MARK: Actions
     
     @objc func tapVoiceLabel(_ sender: UITapGestureRecognizer) {
-        print("TAP VOICE LABEL!")
+        isVoicesExpanded = !isVoicesExpanded
         
-        //        let height = CGFloat(isVoicesExpanded ? 0.0 : 216.0)
-        //        isVoicesExpanded = !isVoicesExpanded
-        //
-        //
-        //        let newRect = CGRect(x: voicePicker.frame.origin.x, y: voicePicker.frame.origin.y, width: voicePicker.frame.width, height: height)
-        //        voicePicker.frame = newRect
+        print("TAP VOICE LABEL!", isVoicesExpanded)
+        
+        // TODO(v2) - more efficiently update row heights
+        tableView.beginUpdates()
+        tableView.endUpdates()
+        
+        // let indexPath = tableView.indexPath(for: voicePickerRow)
+        
+        // DNE configureCell(voicePickerRow, atIndexPath: indexPath)
+        
+        // let height = CGFloat(isVoicesExpanded ? 216.0 : 0.0)
+//        let oldFrame = voicePickerRow.frame
+//        let newFrame = CGRect(x: oldFrame.origin.x, y: oldFrame.origin.y, width: oldFrame.width, height: height)
+//        voicePickerRow.frame = newFrame
     }
     
     @IBAction func tapTimeFormatSwitch(_ sender: UISwitch) {
@@ -160,6 +170,22 @@ class TableViewController: UITableViewController, UIGestureRecognizerDelegate, U
     }
 
     // MARK: - Table view data source
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        // TODO(v2) - how to find index path or cell? seems that rows
+        // don't exist yet on first load, but do later...
+        //        if let curRow = tableView.cellForRow(at: indexPath) {
+        //            print("cur row", curRow, curRow == voicePickerCell)
+        //        }
+        
+        // HACK - hardcode location
+        if indexPath.section == 0 && indexPath.item == 1 {
+            return isVoicesExpanded ? 216.0 : 0
+        }
+        
+        return 37.0
+    }
 
 //    override func numberOfSections(in tableView: UITableView) -> Int {
 //        // #warning Incomplete implementation, return the number of sections

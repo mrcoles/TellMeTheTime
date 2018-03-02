@@ -71,7 +71,7 @@
                         <sections>
                             <tableViewSection id="qCD-tI-Lad">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="wtn-dQ-2Mk">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="wtn-dQ-2Mk" userLabel="Table View Cell - Voice">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wtn-dQ-2Mk" id="jBG-3x-hyn">
@@ -79,10 +79,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZD3-PQ-kcj">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="31"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQ0-h3-Orm">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="31"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="31" id="1YA-94-LXi"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -91,14 +94,13 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="ZD3-PQ-kcj" firstAttribute="top" secondItem="jBG-3x-hyn" secondAttribute="top" id="aPA-ZV-6bl"/>
-                                                <constraint firstAttribute="bottom" secondItem="ZD3-PQ-kcj" secondAttribute="bottom" id="cEO-py-fio"/>
+                                                <constraint firstItem="ZD3-PQ-kcj" firstAttribute="top" secondItem="jBG-3x-hyn" secondAttribute="top" id="84H-Yr-9L2"/>
                                                 <constraint firstAttribute="trailing" secondItem="ZD3-PQ-kcj" secondAttribute="trailing" id="dhs-AL-zP0"/>
                                                 <constraint firstItem="ZD3-PQ-kcj" firstAttribute="leading" secondItem="jBG-3x-hyn" secondAttribute="leading" id="kGO-Mu-TA6"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="MDn-wp-mmW">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="MDn-wp-mmW" userLabel="Table View Cell - Picker">
                                         <rect key="frame" x="0.0" y="44" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MDn-wp-mmW" id="ses-Sx-woa">
@@ -106,13 +108,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView contentMode="scaleToFill" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="31S-vi-6r2">
-                                                    <rect key="frame" x="0.0" y="-87" width="343" height="216"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="216"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </pickerView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="yvQ-Se-VDm">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="yvQ-Se-VDm" userLabel="Table View Cell - Format">
                                         <rect key="frame" x="0.0" y="88" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yvQ-Se-VDm" id="WlX-ac-pRm">
@@ -123,17 +125,15 @@
                                                     <rect key="frame" x="0.0" y="6" width="343" height="31"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Time format" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCB-7k-tK8">
-                                                            <rect key="frame" x="0.0" y="0.0" width="175" height="31"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="170" height="31"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="12 hr" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Yh-TQ-EtB">
-                                                            <rect key="frame" x="183" y="0.0" width="45" height="31"/>
+                                                            <rect key="frame" x="178" y="0.0" width="50" height="31"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="6uJ-l9-mym"/>
-                                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="Enc-Dj-HKr"/>
-                                                                <constraint firstAttribute="width" constant="45" id="J0w-fr-6ti"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="Enc-Dj-HKr"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -148,8 +148,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="24 hr" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3S8-QS-AlW">
                                                             <rect key="frame" x="293" y="0.0" width="50" height="31"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="50" id="Y7X-z5-l0c"/>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="bU4-QD-Xgw"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="Y7X-z5-l0c"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -165,7 +164,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="eVh-fn-gIa">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="eVh-fn-gIa" userLabel="Table View Cell - Mute">
                                         <rect key="frame" x="0.0" y="132" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eVh-fn-gIa" id="Lbr-4W-okC">
@@ -184,8 +183,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="🔈" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7MU-Df-aR0">
                                                             <rect key="frame" x="178" y="0.0" width="50" height="31"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="50" id="lcG-Jh-Kc5"/>
-                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="v6Y-2g-qNx"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="v6Y-2g-qNx"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -200,7 +198,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🔇" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4U7-vs-xSe" userLabel="Volume Off Label">
                                                             <rect key="frame" x="293" y="0.0" width="50" height="31"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="50" id="dkX-n0-ZAI"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="dkX-n0-ZAI"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -216,7 +214,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Gyi-du-U2Q">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Gyi-du-U2Q" userLabel="Table View Cell - Blank">
                                         <rect key="frame" x="0.0" y="176" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Gyi-du-U2Q" id="1Rl-gg-k8B">
@@ -238,6 +236,7 @@
                         <outlet property="timeFormatSwitch" destination="FLd-gB-pbX" id="N7t-HY-4Du"/>
                         <outlet property="voiceLabelWrapper" destination="ZD3-PQ-kcj" id="1cL-qw-fFp"/>
                         <outlet property="voicePicker" destination="31S-vi-6r2" id="VQh-lI-Pgq"/>
+                        <outlet property="voicePickerCell" destination="MDn-wp-mmW" id="ZLq-q3-vkw"/>
                         <outlet property="volumeOffLabel" destination="4U7-vs-xSe" id="Ahd-ST-4M6"/>
                         <outlet property="volumeOnLabel" destination="7MU-Df-aR0" id="7NH-Ex-amn"/>
                         <outlet property="volumeSwitch" destination="fHW-ep-Z4u" id="iWR-Ef-XPu"/>
