@@ -81,7 +81,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, ChildToPare
         // Dispose of any resources that can be recreated.
     }
     
-    // https://stackoverflow.com/a/47447442/376489
+    // segue to pass reference to self: https://stackoverflow.com/a/47447442/376489
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? TableViewController,
             segue.identifier == "viewControllerToTable" {
