@@ -44,8 +44,11 @@ class TableViewController: UITableViewController, UIGestureRecognizerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // fix weird extra left inset...
+        // HACK - fix weird extra left inset...
         tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+        
+        // HACK - prevent extra rows from showing up below Table View
+        tableView.tableFooterView = UIView(frame: .zero)
         
         let parent = self.delegate!
         
