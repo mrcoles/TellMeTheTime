@@ -105,11 +105,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <pickerView contentMode="scaleToFill" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="31S-vi-6r2">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <pickerView contentMode="scaleToFill" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="31S-vi-6r2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
                                                 </pickerView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="31S-vi-6r2" firstAttribute="leading" secondItem="ses-Sx-woa" secondAttribute="leading" id="dZd-4E-aRa"/>
+                                                <constraint firstAttribute="trailing" secondItem="31S-vi-6r2" secondAttribute="trailing" id="qcz-Fs-Iz0"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="yvQ-Se-VDm" userLabel="Table View Cell - Format">
