@@ -17,6 +17,7 @@
 		D01695F520094AAD00247080 /* TellMeTheTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01695F420094AAD00247080 /* TellMeTheTimeUITests.swift */; };
 		D016960320095F0100247080 /* TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D016960220095F0100247080 /* TimeFormat.swift */; };
 		D0538166200D5E5400209959 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0538165200D5E5400209959 /* Speaker.swift */; };
+		D0CE9C5C20E483D300979C0D /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CE9C5B20E483D300979C0D /* UIColorExtensions.swift */; };
 		D0CEC24C2048A6CE008547C7 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0CEC24B2048A6CE008547C7 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		D01695F620094AAD00247080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D016960220095F0100247080 /* TimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormat.swift; sourceTree = "<group>"; };
 		D0538165200D5E5400209959 /* Speaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
+		D0CE9C5B20E483D300979C0D /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		D0CEC24B2048A6CE008547C7 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 				D01695D820094AAC00247080 /* TellMeTheTime.xcdatamodeld */,
 				D016960220095F0100247080 /* TimeFormat.swift */,
 				D0538165200D5E5400209959 /* Speaker.swift */,
+				D0CE9C5B20E483D300979C0D /* UIColorExtensions.swift */,
 			);
 			path = TellMeTheTime;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D01695D420094AAC00247080 /* ViewController.swift in Sources */,
+				D0CE9C5C20E483D300979C0D /* UIColorExtensions.swift in Sources */,
 				D0CEC24C2048A6CE008547C7 /* TableViewController.swift in Sources */,
 				D01695DA20094AAC00247080 /* TellMeTheTime.xcdatamodeld in Sources */,
 				D0538166200D5E5400209959 /* Speaker.swift in Sources */,

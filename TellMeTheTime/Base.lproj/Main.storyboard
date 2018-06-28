@@ -25,13 +25,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="48"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
                             <constraint firstItem="Oc3-uZ-C4Q" firstAttribute="top" secondItem="0in-fp-Z2k" secondAttribute="top" id="15f-vz-rcP"/>
                             <constraint firstItem="0in-fp-Z2k" firstAttribute="bottom" secondItem="Oc3-uZ-C4Q" secondAttribute="bottom" id="LaQ-01-GQh"/>

@@ -115,19 +115,26 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, ChildToPare
     }
     
     func setupBackground() {
-        return
-        
-        /* * /
-        let view = timeLabel! // self.view.frame
+
+        let view = self.view! // timeLabel! // self.view.frame
         if let backgroundLayer = self.backgroundLayer {
             backgroundLayer.frame = view.frame
         } else {
-            let colorTop = UIColor(red: 165.0 / 255.0, green: 158.0 / 255.0, blue: 250.0 / 255.0, alpha: 1.0).cgColor
-            let colorBot = UIColor(red: 100.0 / 255.0, green: 217.0 / 164.0, blue: 250.0 / 255.0, alpha: 1.0).cgColor
+            // let colorTop = UIColor(red: 165.0 / 255.0, green: 158.0 / 255.0, blue: 250.0 / 255.0, alpha: 1.0).cgColor
+            // let colorBot = UIColor(red: 100.0 / 255.0, green: 217.0 / 164.0, blue: 250.0 / 255.0, alpha: 1.0).cgColor
+            
+            // some ideas https://digitalsynopsis.com/design/beautiful-color-gradients-backgrounds/
+            // let hexTop = 0x13547A
+            // let hexBot = 0x80D0C7
+            let hexTop = 0x93A5CF
+            let hexBot = 0xE4EFE9
+
+            let colorTop = UIColor(hex: hexTop).cgColor
+            let colorBot = UIColor(hex: hexBot).cgColor
             
             let gl = CAGradientLayer()
             gl.colors = [colorTop, colorBot]
-            gl.locations = [0.2, 1.0]
+            gl.locations = [0.25, 1.0]
             
             view.backgroundColor = UIColor.clear
             let backgroundLayer = gl
@@ -135,7 +142,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, ChildToPare
             view.layer.insertSublayer(backgroundLayer, at: 0)
             self.backgroundLayer = backgroundLayer
         }
-        / * */
     }
 }
 
