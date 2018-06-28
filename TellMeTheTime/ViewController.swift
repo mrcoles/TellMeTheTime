@@ -28,8 +28,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, ChildToPare
     
     @IBOutlet weak var timeLabel: UILabel!
     
-    @IBOutlet weak var tableViewController: TableViewController!
-    
     let speaker = Speaker()
     
     var timer = Timer()
