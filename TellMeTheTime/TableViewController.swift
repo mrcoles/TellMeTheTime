@@ -53,17 +53,17 @@ class TableViewController: UITableViewController, UIGestureRecognizerDelegate, U
         // HACK - prevent extra rows from showing up below Table View
         tableView.tableFooterView = UIView(frame: .zero)
         
-        //KEEP let parent = self.delegate!
+        let parent = self.delegate!
         
         // Setup voicePicker
-        //KEEP voicePicker.delegate = self
-        //KEEP voicePicker.selectRow(parent.speaker.voiceRow, inComponent: 0, animated: false)
+        voicePicker.delegate = self
+        voicePicker.selectRow(parent.speaker.voiceRow, inComponent: 0, animated: false)
         
         // Update UI
-        //KEEP timeFormatSwitch.isOn = parent.formatter.use24
-        //KEEP volumeSwitch.isOn = parent.muted
-        //KEEP updateTimeFormatLabels()
-        //KEEP updateVolumeLabels()
+        timeFormatSwitch.isOn = parent.formatter.use24
+        volumeSwitch.isOn = parent.muted
+        updateTimeFormatLabels()
+        updateVolumeLabels()
         
         // Setup gesture recognizer for voice label
         voiceLabelWrapper.isUserInteractionEnabled = true

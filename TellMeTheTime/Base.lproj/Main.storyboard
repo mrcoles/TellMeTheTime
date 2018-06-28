@@ -43,7 +43,7 @@
                     <navigationItem key="navigationItem" title="Tell Me The Time" id="lDJ-Bx-org">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Ate-Ba-K9e">
                             <connections>
-                                <segue destination="glL-it-onB" kind="presentation" id="6ve-T2-aJ4"/>
+                                <segue destination="glL-it-onB" kind="presentation" identifier="clockToSettings" id="6ve-T2-aJ4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
