@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import os.log
 
 protocol ChildToParentProtocol:class {
     var speaker: Speaker { get }
@@ -23,6 +24,8 @@ class TableViewController: UITableViewController, UIGestureRecognizerDelegate, U
     // MARK: Properties
     
     weak var delegate:ChildToParentProtocol? = nil
+
+    @IBOutlet weak var doneButton: UIBarButtonItem!
     
     @IBOutlet weak var voiceLabelWrapper: UIStackView!
     
@@ -50,17 +53,17 @@ class TableViewController: UITableViewController, UIGestureRecognizerDelegate, U
         // HACK - prevent extra rows from showing up below Table View
         tableView.tableFooterView = UIView(frame: .zero)
         
-        let parent = self.delegate!
+        //KEEP let parent = self.delegate!
         
         // Setup voicePicker
-        voicePicker.delegate = self
-        voicePicker.selectRow(parent.speaker.voiceRow, inComponent: 0, animated: false)
+        //KEEP voicePicker.delegate = self
+        //KEEP voicePicker.selectRow(parent.speaker.voiceRow, inComponent: 0, animated: false)
         
         // Update UI
-        timeFormatSwitch.isOn = parent.formatter.use24
-        volumeSwitch.isOn = parent.muted
-        updateTimeFormatLabels()
-        updateVolumeLabels()
+        //KEEP timeFormatSwitch.isOn = parent.formatter.use24
+        //KEEP volumeSwitch.isOn = parent.muted
+        //KEEP updateTimeFormatLabels()
+        //KEEP updateVolumeLabels()
         
         // Setup gesture recognizer for voice label
         voiceLabelWrapper.isUserInteractionEnabled = true
@@ -78,6 +81,17 @@ class TableViewController: UITableViewController, UIGestureRecognizerDelegate, U
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: Navigation
+    
+    // This method lets you configure a view controller before it's presented.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard let button = sender as? UIBarButtonItem, button === doneButton else {
+            os_log("The done button was not pressed, cancelling", log: OSLog.default, type: .debug)
+            return
+        }
     }
     
     // MARK: Actions

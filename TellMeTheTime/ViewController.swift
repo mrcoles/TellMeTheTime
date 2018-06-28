@@ -83,12 +83,16 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, ChildToPare
     // segue to pass reference to self: https://stackoverflow.com/a/47447442/376489
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? TableViewController,
-            segue.identifier == "viewControllerToTable" {
+            segue.identifier == "clockToSettings" {
             vc.delegate = self
         }
     }
     
     //MARK: Actions
+    
+    @IBAction func undwindToClockView(sender: UIStoryboardSegue) {
+        // called when returning from settings view...
+    }
     
     @objc func tapTimeLabel(_ sender: UITapGestureRecognizer) {
         sayTime()

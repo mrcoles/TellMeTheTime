@@ -43,7 +43,7 @@
                     <navigationItem key="navigationItem" title="Tell Me The Time" id="lDJ-Bx-org">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Ate-Ba-K9e">
                             <connections>
-                                <segue destination="3Il-Yd-3ku" kind="presentation" id="6ve-T2-aJ4"/>
+                                <segue destination="glL-it-onB" kind="presentation" id="6ve-T2-aJ4"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -55,7 +55,7 @@
             </objects>
             <point key="canvasLocation" x="1419.5" y="24.5"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Settings-->
         <scene sceneID="JpZ-qb-khk">
             <objects>
                 <tableViewController id="3Il-Yd-3ku" customClass="TableViewController" customModule="TellMeTheTime" customModuleProvider="target" sceneMemberID="viewController">
@@ -75,10 +75,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZD3-PQ-kcj">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="31"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="31"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQ0-h3-Orm">
-                                                            <rect key="frame" x="0.0" y="0.0" width="343" height="31"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="375" height="31"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="31" id="1YA-94-LXi"/>
                                                             </constraints>
@@ -95,6 +95,7 @@
                                                 <constraint firstItem="ZD3-PQ-kcj" firstAttribute="leading" secondItem="jBG-3x-hyn" secondAttribute="leading" id="kGO-Mu-TA6"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <viewLayoutGuide key="safeArea" id="xWh-Hg-S2w"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="MDn-wp-mmW" userLabel="Table View Cell - Picker">
                                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -226,7 +227,15 @@
                             <outlet property="delegate" destination="3Il-Yd-3ku" id="4YA-cn-qnZ"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="OOe-MX-ebk">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="UJz-WG-oO3">
+                            <connections>
+                                <segue destination="VTz-aC-uwB" kind="unwind" unwindAction="undwindToClockViewWithSender:" id="pD6-Cz-Cqe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="doneButton" destination="UJz-WG-oO3" id="Kzk-7G-aYo"/>
                         <outlet property="timeFormat12Label" destination="1Yh-TQ-EtB" id="rIe-A4-V7T"/>
                         <outlet property="timeFormat24Label" destination="3S8-QS-AlW" id="FK9-p5-zbk"/>
                         <outlet property="timeFormatSwitch" destination="FLd-gB-pbX" id="N7t-HY-4Du"/>
@@ -239,8 +248,9 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0RO-1a-we8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="VTz-aC-uwB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2369.5" y="24.5"/>
+            <point key="canvasLocation" x="3308" y="23.838080959520241"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hUW-3g-yhF">
@@ -259,6 +269,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tEw-tx-yOQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="465" y="24"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SKJ-wD-fWv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="glL-it-onB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="E5I-EV-OQe">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3Il-Yd-3ku" kind="relationship" relationship="rootViewController" id="kBX-dk-r0K"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cP6-QQ-1Az" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2351" y="443"/>
         </scene>
     </scenes>
 </document>
