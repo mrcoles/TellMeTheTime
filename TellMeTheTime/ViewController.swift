@@ -112,7 +112,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, ChildToPare
     func setupBackground() {
         return
         
-        /*
+        /* * /
         let view = timeLabel! // self.view.frame
         if let backgroundLayer = self.backgroundLayer {
             backgroundLayer.frame = view.frame
@@ -130,7 +130,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate, ChildToPare
             view.layer.insertSublayer(backgroundLayer, at: 0)
             self.backgroundLayer = backgroundLayer
         }
-        */
+        / * */
     }
 }
 
