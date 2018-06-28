@@ -60,6 +60,7 @@ class Speaker: NSObject, AVSpeechSynthesizerDelegate {
         DispatchQueue.global(qos: .userInitiated).async {
             let utterance = AVSpeechUtterance(string: text)
             utterance.voice = self.voice
+            utterance.pitchMultiplier = 1.4
             self.synth.speak(utterance)
         }
     }
