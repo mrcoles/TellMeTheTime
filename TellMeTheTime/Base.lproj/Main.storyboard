@@ -106,7 +106,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <pickerView contentMode="scaleToFill" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="31S-vi-6r2">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="216"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </pickerView>
                                             </subviews>

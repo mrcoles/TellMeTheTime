@@ -201,7 +201,8 @@ class TableViewController: UITableViewController, UIGestureRecognizerDelegate, U
             return isVoicesExpanded ? 216.0 : 0
         }
         
-        return 37.0
+        // HACK - using the spacing constraints from storyboard 8.0 + 8.0 here...
+        return 37.0 + 16.0
     }
 
 //    override func numberOfSections(in tableView: UITableView) -> Int {
