@@ -8,11 +8,13 @@
 
 // TODO
 //
-// *   logo and other launch stuff
+// *   launch
+// *   persist state
+// *   swipe up to pull settings
+// *   night mode
 // *   extra voices: recording, conceptual sound
-// *   PUNT: something prettier on the main screen & some indication of nearing the minute
 // *   PUNT get lock screen controls working? MPRemoteCommandCenter
-// *   X three buttons on bottom: mute (or play/stop?) | voice select | 12hr vs 24hr
+// *   X mute (or play/stop?) | voice select | 12hr vs 24hr
 // *   X auto list of system voices
 // *   X deal with main thread lag of talking
 // *   X get background audio working
